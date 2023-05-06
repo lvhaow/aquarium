@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Demo\DemoController;
 use App\Http\Controllers\Home\AboutController;
+use App\Http\Controllers\Home\GalleryController;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -69,5 +70,13 @@ Route::controller(AboutController::class)->group(function(){
 
     Route::post('/update/multi/image', 'UpdateMultiImage')->name('update.multi.image');
     Route::get('/delete/multi/image/{id}', 'DeleteMultiImage')->name('delete.multi.image');
+});
+
+//Gallery All Route
+Route::controller(GalleryController::class)->group(function(){
+    Route::get('/all/gallery', 'AllGallery')->name('all.gallery');
+    Route::get('/add/gallery', 'AddGallery')->name('add.gallery');
+    Route::post('/store/gallery', 'StoreGallery')->name('store.gallery');
+    Route::get('/edit/gallery/{id}', 'EditGallery')->name('edit.gallery');
 });
 
