@@ -12,9 +12,9 @@
 
                             <h4 class="card-title">Gallery Edit Page </h4>
 
-                            <form method="post" action="" enctype="multipart/form-data">
+                            <form method="post" action=" {{route('update.gallery')}} " enctype="multipart/form-data">
                                 @csrf
-
+                                <input type="hidden" name="id" value="{{ $gallery->id }}" >
                                 <div class="row mb-3">
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Gallery Name</label>
                                     <div class="col-sm-10">
@@ -68,7 +68,7 @@
                                 </div>
                                 <!-- end row -->
                                 <input type="submit" class="btn btn-info waves-effect waves-light"
-                                    value="Insert Gallery Data">
+                                    value="Update Gallery Data">
                             </form>
 
 
