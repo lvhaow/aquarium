@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Demo\DemoController;
 use App\Http\Controllers\Home\AboutController;
+use App\Http\Controllers\Home\AnimalCategoryController;
 use App\Http\Controllers\Home\GalleryController;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\ProfileController;
@@ -80,6 +81,17 @@ Route::controller(GalleryController::class)->group(function(){
     Route::get('/edit/gallery/{id}', 'EditGallery')->name('edit.gallery');
     Route::post('/update/gallery', 'UpdateGallery')->name('update.gallery');
     Route::get('/delete/gallery/{id}', 'DeleteGallery')->name('delete.gallery');
+    Route::get('/gallery/details/{id}', 'GalleryDetails')->name('gallery.details');
     
 });
 
+
+//Animal Category All Route
+Route::controller(AnimalCategoryController::class)->group(function(){
+    Route::get('/all/animal/category', 'AllAnimalCategory')->name('all.animal.category');
+    Route::get('/add/animal/category', 'AddAnimalCategory')->name('add.animal.category');
+    Route::post('/store/animal/category', 'StoreAnimalCategory')->name('store.animal.category');
+    Route::get('/edit/animal/category/{id}', 'EditAnimalCategory')->name('edit.animal.category');
+    Route::post('/update/animal/category/{id}', 'UpdateAnimalCategory')->name('update.animal.category');
+    Route::get('/delete/animal/category/{id}', 'DeleteAnimalCategory')->name('delete.animal.category');
+});

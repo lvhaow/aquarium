@@ -116,4 +116,9 @@ class GalleryController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    public function GalleryDetails($id) {
+        $gallery = Gallery::findOrFail($id);
+        return view('frontend.gallery_details', compact('gallery'));
+    }
 }

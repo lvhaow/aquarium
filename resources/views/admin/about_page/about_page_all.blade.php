@@ -40,9 +40,7 @@
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Short Description
                                     </label>
                                     <div class="col-sm-10">
-                                        <textarea required="" name="short_description" class="form-control" rows="5">
-                                            {{ $aboutpage->short_description }}
-                                        </textarea>
+                                        <textarea required="" name="short_description" class="form-control" rows="5">{{ $aboutpage->short_description }}</textarea>
                                     </div>
                                 </div>
                                 <!-- end row -->
@@ -76,7 +74,8 @@
                                     </div>
                                 </div>
                                 <!-- end row -->
-                                <input type="submit" class="btn btn-info waves-effect waves-light" value="Update About Page">
+                                <input type="submit" class="btn btn-info waves-effect waves-light"
+                                    value="Update About Page">
                             </form>
 
 
