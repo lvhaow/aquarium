@@ -2,8 +2,11 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Demo\DemoController;
+
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\AnimalCategoryController;
+use App\Http\Controllers\Home\AnimalController;
+use App\Http\Controllers\Home\EventController;
 use App\Http\Controllers\Home\GalleryController;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\ProfileController;
@@ -23,6 +26,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('frontend.index');
 });
+
+// Route::get('/', function () {
+//     return view('frontend.event');
+// });
 
 // Route::controller(DemoController::class)->group(function () {
 //     Route::get('/about', 'index')->name('about.page')->middleware('check');
@@ -95,3 +102,40 @@ Route::controller(AnimalCategoryController::class)->group(function(){
     Route::post('/update/animal/category/{id}', 'UpdateAnimalCategory')->name('update.animal.category');
     Route::get('/delete/animal/category/{id}', 'DeleteAnimalCategory')->name('delete.animal.category');
 });
+
+//Animal All Route
+Route::controller(AnimalController::class)->group(function(){
+    Route::get('/all/animal', 'AllAnimal')->name('all.animal');
+    Route::get('/add/animal', 'AddAnimal')->name('add.animal');
+    Route::post('/store/animal', 'StoreAnimal')->name('store.animal');
+    Route::get('/edit/animal/{id}', 'EditAnimal')->name('edit.animal');
+    Route::post('/update/animal', 'UpdateAnimal')->name('update.animal');
+    Route::get('/delete/animal/{id}', 'DeleteAnimal')->name('delete.animal');
+    
+});
+
+//Event All Route
+Route::get('/events/create', [EventController::class, 'create'])->name('events.create');
+
+// Route to store the new event in the database
+Route::post('/events', [EventController::class, 'store'])->name('events.store');
+
+// Route to show the edit event form
+Route::get('/events/{id}/edit', [EventController::class, 'edit'])->name('events.edit');
+
+// Route to update the event in the database
+Route::put('/events/{id}', [EventController::class, 'update'])->name('events.update');
+
+// Route to delete the event from the database
+// Route::delete('/events/{id}', [EventController::class, 'destroy'])->name('events.destroy');
+
+Route::get('/delete/events/{id}', [EventController::class, 'DeleteEvent'])->name('delete.event');
+
+// Route to show all events
+Route::get('/events', [EventController::class, 'index'])->name('events.index');
+
+// Route to show a specific event
+Route::get('/events/{id}', [EventController::class, 'show'])->name('events.show');
+
+
+

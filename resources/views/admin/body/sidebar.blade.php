@@ -58,14 +58,11 @@
                         <span>Event Page Setup</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="#">All Event Data</a></li>
-                        <li><a href="#">Add Event</a></li>
+                        <li><a href=" {{route('events.index')}} ">All Event Data</a></li>
+                        <li><a href=" {{route('events.create')}} ">Add Event</a></li>
                     </ul>
                 </li>
 
-
-
-                <li class="menu-title">Pages</li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -82,15 +79,12 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="ri-profile-line"></i>
-                        <span>Utility</span>
+                        <span>Animal Page</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="pages-starter.html">Starter Page</a></li>
-                        <li><a href="pages-timeline.html">Timeline</a></li>
-                        <li><a href="pages-directory.html">Directory</a></li>
-                        <li><a href="pages-invoice.html">Invoice</a></li>
-                        <li><a href="pages-404.html">Error 404</a></li>
-                        <li><a href="pages-500.html">Error 500</a></li>
+                        <li><a href=" {{ route('all.animal') }} ">All Animal</a></li>
+                        <li><a href="{{ route('add.animal') }}">Add Animal</a></li>
+
                     </ul>
                 </li>
 
