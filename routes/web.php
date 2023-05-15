@@ -7,6 +7,7 @@ use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\AnimalCategoryController;
 use App\Http\Controllers\Home\AnimalController;
 use App\Http\Controllers\Home\EventController;
+use App\Http\Controllers\Home\FooterController;
 use App\Http\Controllers\Home\GalleryController;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\ProfileController;
@@ -90,6 +91,12 @@ Route::controller(GalleryController::class)->group(function(){
     Route::get('/delete/gallery/{id}', 'DeleteGallery')->name('delete.gallery');
     Route::get('/gallery/details/{id}', 'GalleryDetails')->name('gallery.details');
     
+});
+
+//Footer All Route
+Route::controller(FooterController::class)->group(function(){
+    Route::get('/footer/setup', 'FooterSetup')->name('footer.setup');
+    Route::post('/update/footer', 'UpdateFooter')->name('update.footer');
 });
 
 
