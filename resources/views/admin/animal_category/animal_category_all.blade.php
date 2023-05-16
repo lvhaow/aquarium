@@ -41,8 +41,6 @@
                                         <tr>
                                             <td> {{ $i++ }} </td>
                                             <td> {{ $item->animal_category }} </td>
-                                            <td> {{ $item->gallery_title }} </td>
-
                                             <td>
                                                 <a href=" {{ route('edit.animal.category', $item->id) }} " class="btn btn-info sm"
                                                     title="Edit Data"> <i class="fas fa-edit"></i>
