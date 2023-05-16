@@ -20,7 +20,7 @@
                                     <li class="menu-item-has-children"><a href="#">Gallery</a>
                                         <ul class="sub-menu">
                                             <li><a href="portfolio.html">Portfolio</a></li>
-                                            <li><a href=" {{ route('home.about') }} ">Portfolio Details</a></li>
+                                            
                                         </ul>
                                     </li>
                                     <li class="menu-item-has-children"><a href="#">Our Blog</a>

@@ -11,6 +11,7 @@ use App\Http\Controllers\Home\EventController;
 use App\Http\Controllers\Home\FooterController;
 use App\Http\Controllers\Home\GalleryController;
 use App\Http\Controllers\Home\HomeSliderController;
+use App\Http\Controllers\Home\MapController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -106,6 +107,12 @@ Route::controller(ContactController::class)->group(function(){
     Route::post('/store/message', 'StoreMessage')->name('store.message');
     Route::get('/contact/message', 'ContactMessage')->name('contact.message');
     Route::get('/delete/message/{id}', 'DeletetMessage')->name('delete.message');
+});
+
+//Map All Route
+Route::controller(MapController::class)->group(function(){
+    Route::get('/map/setup', 'MapSetup')->name('map.setup');
+    Route::post('/update/map', 'UpdateMap')->name('update.map');
 });
 
 
