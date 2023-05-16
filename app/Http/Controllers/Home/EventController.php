@@ -32,7 +32,7 @@ class EventController extends Controller
         $event->location = $request->input('location');
         $event->save();
 
-        return redirect()->route('events.index');
+        return redirect()->route('all.event');
 
         ##
 
