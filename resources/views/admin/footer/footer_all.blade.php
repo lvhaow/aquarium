@@ -29,7 +29,7 @@
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Short Description
                                     </label>
                                     <div class="col-sm-10">
-                                        <textarea id="elm1" name="short_description">
+                                        <textarea name="short_description" class="form-control" rows="5">
                                             {{ $allfooter->short_description }}
                                         </textarea>
                                     </div>
