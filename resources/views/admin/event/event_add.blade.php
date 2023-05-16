@@ -63,7 +63,7 @@
                                     <label for="example-text-input" class="col-sm-2 col-form-label">Location
                                     </label>
                                     <div class="col-sm-10">
-                                        <input name="location" class="form-control" type="datetime-local"
+                                        <input name="location" class="text" type="datetime-local"
                                             id="location">
                                     </div>
                                 </div>
