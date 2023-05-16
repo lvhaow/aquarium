@@ -1,4 +1,3 @@
-
 @extends('admin.admin_master')
 @section('admin')
     <div class="page-content">
@@ -9,9 +8,6 @@
                 <div class="col-12">
                     <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                         <h4 class="mb-sm-0">Event All</h4>
-
-
-
                     </div>
                 </div>
             </div>
@@ -33,26 +29,27 @@
                                         <th>Event Name</th>
                                         <th>Event Date</th>
                                         <th>Event Location</th>
+                                        <th>Event Image</th>
                                         <th>Action</th>
-
                                 </thead>
-
 
                                 <tbody>
                                     @php($i = 1)
-                                    @foreach ($events as $event)
+                                    @foreach ($event as $item)
                                         <tr>
                                             <td> {{ $i++ }} </td>
-                                            <td> {{ $event->name }} </td>
-                                            <td>{{ \Carbon\Carbon::parse($event->start_date)->format('F j, Y g:i A') }}</td>
-                                            <td> {{ $event->location }} </td>
+                                            <td> {{ $item->name }} </td>
+                                            <td>{{ \Carbon\Carbon::parse($item->start_date)->format('F j, Y g:i A') }}</td>
+                                            <td> {{ $item->location }} </td>
+                                            <td> <img src="{{ asset($item->event_image) }}"
+                                                    style="width: 60px; height: 50px;"> </td>
 
                                             <td>
-                                                <a href=" {{ route('events.edit', $event->id) }} " class="btn btn-info sm"
+                                                <a href=" {{ route('edit.event', $item->id) }} " class="btn btn-info sm"
                                                     title="Edit Data"> <i class="fas fa-edit"></i>
                                                 </a>
 
-                                                <a href="   {{ route('delete.event', $event->id) }}" class="btn btn-danger sm"
+                                                <a href="{{ route('delete.event', $item->id) }}" class="btn btn-danger sm"
                                                     title="Delete Data" id="delete"> <i class="fas fa-trash-alt"></i>
                                                 </a>
 

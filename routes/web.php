@@ -92,7 +92,17 @@ Route::controller(GalleryController::class)->group(function(){
     Route::post('/update/gallery', 'UpdateGallery')->name('update.gallery');
     Route::get('/delete/gallery/{id}', 'DeleteGallery')->name('delete.gallery');
     Route::get('/gallery/details/{id}', 'GalleryDetails')->name('gallery.details');
-    
+});
+
+
+//Event All Route
+Route::controller(EventController::class)->group(function(){
+    Route::get('/all/event', 'AllEvent')->name('all.event');
+    Route::get('/add/event', 'AddEvent')->name('add.event');
+    Route::post('/store/event', 'StoreEvent')->name('store.event');
+    Route::get('/edit/event/{id}', 'EditEvent')->name('edit.event');
+    Route::post('/update/event', 'UpdateEvent')->name('update.event');
+    Route::get('/delete/event/{id}', 'DeleteEvent')->name('delete.event');
 });
 
 //Footer All Route
@@ -137,28 +147,7 @@ Route::controller(AnimalController::class)->group(function(){
     
 });
 
-//Event All Route
-Route::get('/events/create', [EventController::class, 'create'])->name('events.create');
 
-// Route to store the new event in the database
-Route::post('/events', [EventController::class, 'store'])->name('events.store');
-
-// Route to show the edit event form
-Route::get('/events/{id}/edit', [EventController::class, 'edit'])->name('events.edit');
-
-// Route to update the event in the database
-Route::put('/events/{id}', [EventController::class, 'update'])->name('events.update');
-
-// Route to delete the event from the database
-// Route::delete('/events/{id}', [EventController::class, 'destroy'])->name('events.destroy');
-
-Route::get('/delete/events/{id}', [EventController::class, 'DeleteEvent'])->name('delete.event');
-
-// Route to show all events
-Route::get('/events', [EventController::class, 'index'])->name('events.index');
-
-// Route to show a specific event
-Route::get('/events/{id}', [EventController::class, 'show'])->name('events.show');
 
 
 

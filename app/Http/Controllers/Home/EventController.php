@@ -5,22 +5,24 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use App\Models\Event;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
+use Image;
+use Illuminate\Support\Carbon;
+
 
 class EventController extends Controller
 {
-    public function index()
+    public function AllEvent()
     {
-        $events = Event::all();
-        return view('admin.event.index', compact('events'));
+        $event = Event::latest()->get();
+        return view('admin.event.event_all', compact('event'));
     }
 
-    public function create()
+    public function AddEvent()
     {
-        return view('admin.event.create');
+        return view('admin.event.event_add');
     }
 
-    public function store(Request $request)
+    public function StoreEvent(Request $request)
     {
         $event = new Event;
         $event->name = $request->input('name');
@@ -31,31 +33,89 @@ class EventController extends Controller
         $event->save();
 
         return redirect()->route('events.index');
+
+        ##
+
+        $image = $request->file('event_image');
+        $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+
+        Image::make($image)->resize(56, 56)->save('upload/event/' . $name_gen);
+        $save_url = 'upload/event/' . $name_gen;
+
+        Event::insert([
+            'name' => $request->name,
+            'description' => $request->description,
+            'start_date' => $request->start_date,
+            'end_date' => $request->end_date,
+            'location' => $request->location,
+            'event_image' => $save_url,
+            'created_at' => Carbon::now(),
+
+        ]);
+        $notification = array(
+            'message' => 'Event Inserted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.event')->with($notification);
     }
 
-    public function edit($id)
+    public function EditEvent($id)
     {
         $event = Event::findOrFail($id);
-        return view('admin.event.edit', compact('event'));
+        return view('admin.event.event_edit', compact('event'));
     }
 
-    public function update(Request $request, $id)
+    public function UpdateEvent(Request $request)
     {
-        $event = Event::findOrFail($id);
-        $event->name = $request->input('name');
-        $event->description = $request->input('description');
-        $event->start_date = $request->input('start_date');
-        $event->end_date = $request->input('end_date');
-        $event->location = $request->input('location');
-        $event->save();
+        $event_id = $request->id;
 
-        return redirect()->route('events.index');
+        if ($request->file('event_image')) {
+            $image = $request->file('event_image');
+            $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();  // 3434343443.jpg
+
+            Image::make($image)->resize(56, 56)->save('upload/event/' . $name_gen);
+            $save_url = 'upload/event/' . $name_gen;
+
+            Event::findOrFail($event_id)->update([
+                'name' => $request->name,
+                'description' => $request->description,
+                'start_date' => $request->start_date,
+                'end_date' => $request->end_date,
+                'location' => $request->location,
+                'event_image' => $save_url,
+            ]);
+            $notification = array(
+                'message' => 'Event Updated Successfully',
+                'alert-type' => 'success'
+            );
+
+            return redirect()->route('all.event')->with($notification);
+        } else {
+
+            Event::findOrFail($event_id)->update([
+                'name' => $request->name,
+                'description' => $request->description,
+                'start_date' => $request->start_date,
+                'end_date' => $request->end_date,
+                'location' => $request->location,
+
+            ]);
+            $notification = array(
+                'message' => 'Event Updated without Successfully',
+                'alert-type' => 'success'
+            );
+            return redirect()->route('all.event')->with($notification);
+        } // end Else
     }
 
     public function DeleteEvent($id)
     {
+        $event = Event::findOrFail($id);
+        $img =  $event->event_image;
+        unlink($img);
         Event::findOrFail($id)->delete();
-        
+
         $notification = array(
             'message' => 'Event Deleted Successfully',
             'alert-type' => 'success'

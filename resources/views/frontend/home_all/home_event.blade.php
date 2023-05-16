@@ -1,5 +1,7 @@
 @php
-    $events = App\Models\Event::latest()->limit(4)->get();
+    $events = App\Models\Event::latest()
+        ->limit(4)
+        ->get();
 @endphp
 
 <section class="work__process">
@@ -17,12 +19,11 @@
             @foreach ($events as $item)
                 <div class="col">
                     <div class="work__process__item">
-                        <span class="work__process_step">{{ \Carbon\Carbon::parse($item->start_date)->format('F j, Y g:i A') }}</span>
+                        <span
+                            class="work__process_step">{{ \Carbon\Carbon::parse($item->start_date)->format('F j, Y g:i A') }}</span>
                         <div class="work__process__icon">
-                            <img class="light" src="{{ asset('frontend/assets/img/icons/wp_light_icon01.png') }}"
-                                alt="">
-                            <img class="dark" src="{{ asset('frontend/assets/img/icons/wp_icon01.png') }}"
-                                alt="">
+                            <img class="light" src="{{ asset($item->event_image) }}" alt="">
+                            <img class="dark" src="{{ asset($item->event_image) }}" alt="">
                         </div>
                         <div class="work__process__content">
                             <h4 class="title"> {{ $item->name }} </h4>
