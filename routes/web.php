@@ -6,6 +6,7 @@ use App\Http\Controllers\Demo\DemoController;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\AnimalCategoryController;
 use App\Http\Controllers\Home\AnimalController;
+use App\Http\Controllers\Home\ContactController;
 use App\Http\Controllers\Home\EventController;
 use App\Http\Controllers\Home\FooterController;
 use App\Http\Controllers\Home\GalleryController;
@@ -97,6 +98,14 @@ Route::controller(GalleryController::class)->group(function(){
 Route::controller(FooterController::class)->group(function(){
     Route::get('/footer/setup', 'FooterSetup')->name('footer.setup');
     Route::post('/update/footer', 'UpdateFooter')->name('update.footer');
+});
+
+//Contact All Route
+Route::controller(ContactController::class)->group(function(){
+    Route::get('/contact', 'Contact')->name('contact.me');
+    Route::post('/store/message', 'StoreMessage')->name('store.message');
+    Route::get('/contact/message', 'ContactMessage')->name('contact.message');
+    Route::get('/delete/message/{id}', 'DeletetMessage')->name('delete.message');
 });
 
 

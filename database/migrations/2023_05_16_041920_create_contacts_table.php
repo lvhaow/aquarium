@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('footers', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->string('number')->nullable();
-            $table->text('short_description')->nullable();
-            $table->string('address')->nullable();
+            $table->string('map')->nullable();
+            $table->string('name')->nullable();
             $table->string('email')->nullable();
-            $table->string('facebook')->nullable();
-            $table->string('twitter')->nullable();
-            $table->string('copyright')->nullable();
+            $table->string('subject')->nullable();
+            $table->string('phone')->nullable();
+            $table->text('message')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('footers');
+        Schema::dropIfExists('contacts');
     }
 };
