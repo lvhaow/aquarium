@@ -30,6 +30,7 @@
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Phone</th>
+                                        <th>Message</th>
                                         <th>Date</th>
                                         <th>Action</th>
 
@@ -44,6 +45,7 @@
                                             <td> {{ $item->name }} </td>
                                             <td> {{ $item->email }} </td>
                                             <td> {{ $item->phone }} </td>
+                                            <td> {{ $item->message }} </td>
                                             <td> {{ Carbon\Carbon::parse($item->created_at)->diffForHumans() }} </td>
                                             <td>
 
