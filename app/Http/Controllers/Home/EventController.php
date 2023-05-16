@@ -24,18 +24,6 @@ class EventController extends Controller
 
     public function StoreEvent(Request $request)
     {
-        $event = new Event;
-        $event->name = $request->input('name');
-        $event->description = $request->input('description');
-        $event->start_date = $request->input('start_date');
-        $event->end_date = $request->input('end_date');
-        $event->location = $request->input('location');
-        $event->save();
-
-        return redirect()->route('all.event');
-
-        ##
-
         $image = $request->file('event_image');
         $name_gen = hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
 
