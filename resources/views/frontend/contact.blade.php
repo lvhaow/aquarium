@@ -110,7 +110,9 @@
             </div>
         </section>
         <!-- contact-info-area-end -->
-
+<br><br>
+<br><br>
+<br><br>
         <!-- contact-area -->
         @include('frontend.home_all.home_feedback')
         <!-- contact-area-end -->
