@@ -26,8 +26,8 @@ $animals = App\Models\Animal::latest()->limit(3)->get();
            </div>
            <div class="blog__post__content">
                <span class="date">{{ Carbon\Carbon::parse($item->created_at)->diffForHumans() }} </span>
-               <h3 class="title"><a href="#"> {{ $item->animal_title }} </a></h3>
-               <a href="#" class="read__more">Read mORe</a>
+               <h3 class="title"><a href=" {{ route('animal.details', $item->id)}} "> {{ $item->animal_title }} </a></h3>
+               <a href="{{route('animal.details', $item->id)}}" class="read__more">Read mORe</a>
            </div>
        </div>
    </div>
@@ -36,7 +36,7 @@ $animals = App\Models\Animal::latest()->limit(3)->get();
                      
                    </div>
                    <div class="blog__button text-center">
-                       <a href="blog.html" class="btn">more blog</a>
+                       <a href=" # " class="btn">more blog</a>
                    </div>
                </div>
            </section>

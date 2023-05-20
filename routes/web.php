@@ -144,6 +144,10 @@ Route::controller(AnimalController::class)->group(function(){
     Route::get('/edit/animal/{id}', 'EditAnimal')->name('edit.animal');
     Route::post('/update/animal', 'UpdateAnimal')->name('update.animal');
     Route::get('/delete/animal/{id}', 'DeleteAnimal')->name('delete.animal');
+
+    Route::get('/animal/details/{id}', 'AnimalDetails')->name('animal.details');
+    Route::get('/category/animal/{id}', 'CategoryAnimal')->name('category.animal');
+    Route::get('/animal', 'HomeAnimal')->name('home.animal');
     
 });
 

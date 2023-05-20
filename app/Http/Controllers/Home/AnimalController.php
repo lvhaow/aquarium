@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Image;
 use Illuminate\Support\Carbon;
 
+
 class AnimalController extends Controller
 {
     public function AllAnimal()
@@ -114,4 +115,25 @@ class AnimalController extends Controller
         return redirect()->back()->with($notification);
     }
 
+    public function AnimalDetails($id) {
+        $allanimals = Animal::latest()->limit(5)->get();
+        $animals = Animal::findOrFail($id);
+        $categories = AnimalCategory::orderBy('animal_category', 'ASC')->get();
+        return view('frontend.animal_details', compact('animals','allanimals','categories'));
+    }
+
+    public function CategoryAnimal($id) {
+      
+        $animalpost = Animal::where('animal_category_id',$id)->orderBy('id','DESC')->get();
+        $allanimals = Animal::latest()->limit(5)->get();
+        $categories = AnimalCategory::orderBy('animal_category', 'ASC')->get();
+        $categoryname = AnimalCategory::findOrFail($id);
+        return view('frontend.cat_animal_details', compact('animalpost','allanimals','categories','categoryname'));
+    }
+
+    public function HomeAnimal() {
+        $categories = AnimalCategory::orderBy('animal_category', 'ASC')->get();
+        $allanimals = Animal::latest()->get();
+        return view('frontend.animal', compact('allanimals','categories'));
+    }
 }
