@@ -121,4 +121,10 @@ class GalleryController extends Controller
         $gallery = Gallery::findOrFail($id);
         return view('frontend.gallery_details', compact('gallery'));
     }
+
+    public function HomeGallery(){
+
+        $gallery = Gallery::latest()->get();
+        return view('frontend.gallery',compact('gallery'));
+       } // End Method 
 }
