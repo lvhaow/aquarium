@@ -16,14 +16,9 @@
                                 <ul class="navigation">
                                     <li class="active"><a href=" {{ url('/') }} ">Home</a></li>
                                     <li><a href=" {{ route('home.about') }}">About</a></li>
-                                    <li><a href="/#services">Services</a></li>
                                     <li class="menu-item-has-children"><a href="#">Gallery</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="portfolio.html">Portfolio</a></li>
-                                            
-                                        </ul>
                                     </li>
-                                    <li class="menu-item-has-children"><a href=" {{route('home.animal')}} ">Our Blog</a>
+                                    <li class="menu-item-has-children"><a href=" {{route('home.animal')}} ">Animal Blog</a>
                                     </li>
                                     <li><a href=" {{route('contact.me')}} ">contact me</a></li>
                                 </ul>
