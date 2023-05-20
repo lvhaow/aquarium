@@ -16,7 +16,7 @@
                                 <ul class="navigation">
                                     <li class="active"><a href=" {{ url('/') }} ">Home</a></li>
                                     <li><a href=" {{ route('home.about') }}">About</a></li>
-                                    <li class="menu-item-has-children"><a href="#">Gallery</a>
+                                    <li class="menu-item-has-children"><a href=" {{route('home.gallery')}} ">Gallery</a>
                                     </li>
                                     <li class="menu-item-has-children"><a href=" {{route('home.animal')}} ">Animal Blog</a>
                                     </li>

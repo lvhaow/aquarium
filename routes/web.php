@@ -92,6 +92,7 @@ Route::controller(GalleryController::class)->group(function(){
     Route::post('/update/gallery', 'UpdateGallery')->name('update.gallery');
     Route::get('/delete/gallery/{id}', 'DeleteGallery')->name('delete.gallery');
     Route::get('/gallery/details/{id}', 'GalleryDetails')->name('gallery.details');
+    Route::get('/gallery', 'HomeGallery')->name('home.gallery');
 });
 
 
