@@ -50,7 +50,7 @@
                                             <td> {{ $item->phone_number }} </td>
                                             <td> {{ $item->number_of_tickets }} </td>
                                             <td> {{ $item->description }} </td>
-                                            <td> {{ Carbon\Carbon::parse($item->created_at)->diffForHumans() }} </td>
+                                            <td>{{ \Carbon\Carbon::parse($item->created_at)->format('j F Y') }}</td>
                                             <td>
                                                 <a href="{{ route('delete.booking', $item->id) }}" class="btn btn-danger sm"
                                                     title="Delete Data" id="delete"> <i class="fas fa-trash-alt"></i>

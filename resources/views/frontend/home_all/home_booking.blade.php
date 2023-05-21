@@ -27,7 +27,7 @@ $events = App\Models\Event::latest()->get();
                                                 <option value="{{$item->id}}"> {{$item->name}} </option>
                                             @endforeach
                                         </select>
-                            <input name="name" type="text" placeholder="booking name*">
+                            <input name="name" type="text" placeholder="name*">
                             <input name="email" type="email" placeholder="Enter mail*">
                             <input name="phone_number" type="number" placeholder="Enter number*">
                             <input name="number_of_tickets" type="text" placeholder="number of tickets*">

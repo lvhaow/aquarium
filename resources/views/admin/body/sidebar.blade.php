@@ -52,16 +52,7 @@
                     </ul>
                 </li>
 
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-mail-send-line"></i>
-                        <span>Event Page Setup</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href=" {{route('all.event')}} ">All Event Data</a></li>
-                        <li><a href=" {{route('add.event')}} ">Add Event</a></li>
-                    </ul>
-                </li>
+              
 
 
                 <li>
@@ -109,6 +100,16 @@
                     </ul>
                 </li>
 
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-mail-send-line"></i>
+                        <span>Event Page Setup</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href=" {{route('all.event')}} ">All Event Data</a></li>
+                        <li><a href=" {{route('add.event')}} ">Add Event</a></li>
+                    </ul>
+                </li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
