@@ -33,8 +33,9 @@ class BookingController extends Controller
     }
 
     public function BookingMessage(){
-        $bookings = Booking::latest()->get();
+        $bookings = Booking::latest()->orderBy('id','DESC')->get();
         $events = Event::latest()->get();
+     
         return view('admin.booking.allbooking', compact('bookings','events'));
     }
 
