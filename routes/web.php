@@ -6,6 +6,7 @@ use App\Http\Controllers\Demo\DemoController;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\AnimalCategoryController;
 use App\Http\Controllers\Home\AnimalController;
+use App\Http\Controllers\Home\BookingController;
 use App\Http\Controllers\Home\ContactController;
 use App\Http\Controllers\Home\EventController;
 use App\Http\Controllers\Home\FooterController;
@@ -106,6 +107,15 @@ Route::controller(EventController::class)->group(function(){
     Route::get('/delete/event/{id}', 'DeleteEvent')->name('delete.event');
 });
 
+
+//Booking All Route
+Route::controller(BookingController::class)->group(function(){
+    Route::get('/booking/create', 'BookingCreate')->name('booking.create');
+    Route::post('/booking/store', 'BookingStore')->name('booking.store');
+    Route::get('/booking/message', 'BookingMessage')->name('booking.message');
+    Route::get('/delete/booking/{id}', 'DeleteBooking')->name('delete.booking');
+});
+
 //Footer All Route
 Route::controller(FooterController::class)->group(function(){
     Route::get('/footer/setup', 'FooterSetup')->name('footer.setup');
@@ -125,6 +135,8 @@ Route::controller(MapController::class)->group(function(){
     Route::get('/map/setup', 'MapSetup')->name('map.setup');
     Route::post('/update/map', 'UpdateMap')->name('update.map');
 });
+
+
 
 
 //Animal Category All Route

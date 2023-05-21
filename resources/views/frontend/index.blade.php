@@ -38,7 +38,8 @@
 <!-- contact-area -->
 {{-- feedback --}}
 
-@include('frontend.home_all.home_feedback')
+{{-- @include('frontend.home_all.home_feedback') --}}
+@include('frontend.home_all.home_booking')
 {{-- feedback End --}}
 <!-- contact-area-end -->
 @endsection
