@@ -32,7 +32,7 @@
                                         <th>Email</th>
                                         <th>Phone</th>
                                         <th>Ticket</th>
-                                        <th>description</th>
+                                        <th>Description</th>
                                         <th>Date</th>
                                         <th>Action</th>
 
