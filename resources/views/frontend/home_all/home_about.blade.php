@@ -18,7 +18,7 @@
             <div class="col-lg-6">
                 <div class="about__content">
                     <div class="section__title">
-                        <span class="sub-title">01 - About me</span>
+                        <span class="sub-title">01 - About Us</span>
                         <h2 class="title">{{ $aboutpage->title }}</h2>
                     </div>
                     <div class="about__exp">
@@ -30,7 +30,7 @@
                         </div>
                     </div>
                     <p class="desc">{{ $aboutpage->short_description }}</p>
-                    <a href="about.html" class="btn">Download my resume</a>
+                    <a href=" {{route('home.about')}} " class="btn">Read More</a>
                 </div>
             </div>
         </div>
