@@ -11,7 +11,7 @@
 
             <div class="col-xl-6 col-lg-8">
                 <div class="section__title text-center">
-                    <span class="sub-title">03 - Event</span>
+                    <span class="sub-title">02 - Event</span>
                     <h2 class="title">Upcoming Events</h2>
                 </div>
             </div>

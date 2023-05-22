@@ -10,7 +10,7 @@ $animals = App\Models\Animal::latest()->limit(3)->get();
 
                         <div class="col-xl-6 col-lg-8">
                             <div class="section__title text-center">
-                                <span class="sub-title">03 - Animal</span> <br>
+                                <span class="sub-title">04 - Animal</span> <br>
                             </div>
                         </div>
                     </div>

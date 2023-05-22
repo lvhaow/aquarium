@@ -3,8 +3,8 @@
         <div class="row justify-content-center">
             <div class="col-xl-6 col-lg-8">
                 <div class="section__title text-center">
-                    <span class="sub-title">04 - Gallery</span>
-                    <h2 class="title">All creative work</h2>
+                    <span class="sub-title">03 - Gallery</span>
+                    <h2 class="title">Discover the Enchanting Beauty of Marine Life</h2>
                 </div>
             </div>
         </div>
@@ -33,8 +33,7 @@
                                         <h4 class="title"><a
                                                 href=" {{ route('gallery.details', $item->id) }} ">{{ $item->gallery_title }}</a>
                                         </h4>
-                                        <a href="{{ route('gallery.details', $item->id) }}" class="link">Case
-                                            Study</a>
+                                        <a href="{{ route('gallery.details', $item->id) }}" class="link">Read More</a>
                                     </div>
                                 </div>
                             @endforeach
