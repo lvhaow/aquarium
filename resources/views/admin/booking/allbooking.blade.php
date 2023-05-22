@@ -49,7 +49,9 @@
                                             <td> {{ $item->email }} </td>
                                             <td> {{ $item->phone_number }} </td>
                                             <td> {{ $item->number_of_tickets }} </td>
-                                            <td> {{ $item->description }} </td>
+                                            <td>
+                                                <p>{!! Str::limit($item->description, 35) !!}</p>
+                                            </td>
                                             <td>{{ \Carbon\Carbon::parse($item->created_at)->format('j F Y') }}</td>
                                             <td>
                                                 <a href="{{ route('delete.booking', $item->id) }}" class="btn btn-danger sm"
