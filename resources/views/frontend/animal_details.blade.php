@@ -48,7 +48,7 @@
                                         {{ Carbon\Carbon::parse($animals->created_at)->diffForHumans() }}</li>
                                 </ul>
                                 <h2 class="title"> {{ $animals->animal_title }} </h2>
-                                <p> {!! $animals->animal_title !!}</p>
+                                <p> {!! $animals->animal_description !!}</p>
                             </div>
                             <div class="blog__details__bottom">
                                 <ul class="blog__details__tag">

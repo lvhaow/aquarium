@@ -9,6 +9,7 @@ use Image;
 use Illuminate\Support\Carbon;
 
 
+
 class EventController extends Controller
 {
     public function AllEvent()

@@ -2,6 +2,7 @@
     $events = App\Models\Event::latest()
         ->limit(4)
         ->get();
+        
 @endphp
 
 <section class="work__process">
@@ -27,7 +28,8 @@
                         </div>
                         <div class="work__process__content">
                             <h4 class="title"> {{ $item->name }} </h4>
-                            <p>{!! $item->description !!}</p>
+                            
+                            <p>{!! Str::limit($item->description, 100) !!}</p>
                         </div>
                     </div>
                 </div>
