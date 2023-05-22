@@ -44,13 +44,15 @@
                                     @foreach ($bookings as $item)
                                         <tr>
                                             <td> {{ $i++ }} </td>
-                                            <td> {{ $item->event->name }} </td>
+                                            <td>
+                                                <p>{!! Str::limit($item->event->name, 20) !!}</p>
+                                            </td>
                                             <td> {{ $item->name }} </td>
                                             <td> {{ $item->email }} </td>
                                             <td> {{ $item->phone_number }} </td>
                                             <td> {{ $item->number_of_tickets }} </td>
                                             <td>
-                                                <p>{!! Str::limit($item->description, 25) !!}</p>
+                                                <p>{!! Str::limit($item->description, 30) !!}</p>
                                             </td>
                                             <td>{{ \Carbon\Carbon::parse($item->created_at)->format('j F Y') }}</td>
                                             <td>
