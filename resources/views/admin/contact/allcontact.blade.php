@@ -42,10 +42,14 @@
                                     @foreach ($contacts as $item)
                                         <tr>
                                             <td> {{ $i++ }} </td>
-                                            <td> {{ $item->name }} </td>
+                                            <td> 
+                                                <p>{!! Str::limit($item->name, 20) !!}</p>
+                                            </td>
                                             <td> {{ $item->email }} </td>
                                             <td> {{ $item->phone }} </td>
-                                            <td> {{ $item->message }} </td>
+                                            <td>
+                                                <p>{!! Str::limit($item->message, 35) !!}</p>
+                                            </td>
                                             <td> {{ Carbon\Carbon::parse($item->created_at)->diffForHumans() }} </td>
                                             <td>
 
