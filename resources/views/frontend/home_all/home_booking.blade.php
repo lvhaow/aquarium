@@ -3,7 +3,7 @@ $bookings = App\Models\Booking::latest()->get();
 $events = App\Models\Event::latest()->get();
 @endphp
 
-<section class="homeContact">
+<section class="homeContact" id="booking">
     <div class="container">
         <div class="homeContact__wrap">
             <div class="row">

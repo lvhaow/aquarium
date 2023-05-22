@@ -34,5 +34,8 @@
             @endforeach
 
         </div>
+        <div class="blog__button text-center">
+            <a data-scroll href="#booking" class="btn">Booking Event</a>
+           </div>
     </div>
 </section>
