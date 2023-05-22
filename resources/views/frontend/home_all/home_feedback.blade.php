@@ -4,12 +4,12 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section__title">
-                        <span class="sub-title">07 - Booking</span>
-                        <h2 class="title">Aquarium Booking</h2>
+                        <span class="sub-title">07 - Feedback</span>
+                        <h2 class="title">Any questions? Feel free</h2>
                     </div>
                     <div class="homeContact__content">
-                        <p>Welcome to Aquarium, your one-stop booking platform for all things aquarium-related</p>
-                        <h2 class="mail"><a href="mailto:Info@webmail.com">Info@webmail.com</a></h2>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
+                        <h2 class="mail"><a href="mailto:info@aquarium.com">info@aquarium.com</a></h2>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -20,7 +20,7 @@
                             <input name="email" type="email" placeholder="Enter mail*">
                             <input name="phone" type="number" placeholder="Enter number*">
                             <textarea name="message" id="message" placeholder="Enter Massage*"></textarea>
-                            <button type="submit">Send Booking</button>
+                            <button type="submit">Send Feedback</button>
                         </form>
                     </div>
                 </div>

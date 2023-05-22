@@ -1,5 +1,6 @@
 @php
     $mappage = App\Models\Map::find(1);
+    $allfooter = App\Models\Footer::find(1);
 @endphp
 @extends('frontend.main_master')
 @section('main')
@@ -78,7 +79,7 @@
                             </div>
                             <div class="contact__info__content">
                                 <h4 class="title">address line</h4>
-                                <span>Bowery St, New York, <br> NY 10013,USA</span>
+                                <span><p>{{ $allfooter->address }}</p></span>
                             </div>
                         </div>
                     </div>
@@ -89,8 +90,9 @@
                             </div>
                             <div class="contact__info__content">
                                 <h4 class="title">Phone Number</h4>
-                                <span>+1255 - 568 - 6523</span>
-                                <span>+1255 - 568 - 6523</span>
+                                <span>{{ $allfooter->number }}</span>
+                                
+                               
                             </div>
                         </div>
                     </div>
@@ -101,8 +103,8 @@
                             </div>
                             <div class="contact__info__content">
                                 <h4 class="title">Mail Address</h4>
-                                <span>email@example.com</span>
-                                <span>info@yourdomain.com</span>
+                                <span><a href="mailto:{{ $allfooter->email }}" class="mail">{{ $allfooter->email }}</a></span>
+                               
                             </div>
                         </div>
                     </div>

@@ -54,7 +54,7 @@
                                     <div class="portfolio__inner__content">
  <h2 class="title"><a href="{{ route('gallery.details',$item->id)}}">{{$item->gallery_title}}</a></h2>
                                 <p>{!! Str::limit($item->gallery_description, 200) !!}  </p>
-            <a href="{{ route('gallery.details',$item->id)}}" class="link">View Case Study</a>
+            <a href="{{ route('gallery.details',$item->id)}}" class="link">Read More</a>
                                     </div>
                                 </div>
                             </div>
@@ -71,35 +71,7 @@
 
 
             <!-- contact-area -->
-            <section class="homeContact homeContact__style__two">
-                <div class="container">
-                    <div class="homeContact__wrap">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="section__title">
-                                    <span class="sub-title">07 - Say hello</span>
-                                    <h2 class="title">Any questions? Feel free <br> to contact</h2>
-                                </div>
-                                <div class="homeContact__content">
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
-                                    <h2 class="mail"><a href="mailto:Info@webmail.com">Info@webmail.com</a></h2>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="homeContact__form">
-                                    <form action="#">
-                                        <input type="text" placeholder="Enter name*">
-                                        <input type="email" placeholder="Enter mail*">
-                                        <input type="number" placeholder="Enter number*">
-                                        <textarea name="message" placeholder="Enter Massage*"></textarea>
-                                        <button type="submit">Send Message</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            @include('frontend.home_all.home_feedback')
             <!-- contact-area-end -->
 
         </main>

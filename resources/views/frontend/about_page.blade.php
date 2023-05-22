@@ -15,10 +15,10 @@
                     <div class="row justify-content-center">
                         <div class="col-xl-6 col-lg-8 col-md-10">
                             <div class="breadcrumb__wrap__content">
-                                <h2 class="title">About me</h2>
+                                <h2 class="title">About Us</h2>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                        <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
                                         <li class="breadcrumb-item active" aria-current="page">About Us</li>
                                     </ol>
                                 </nav>
@@ -60,7 +60,7 @@
         </div>
     </div>
     <p class="desc">{{ $aboutpage->short_description }}</p>
-    <a href="about.html" class="btn">Download my resume</a>
+    <a href=" {{route('home.gallery')}} " class="btn">Watch Gallery</a>
 </div>
 </div>
 </div>
@@ -351,35 +351,7 @@
 <!-- blog-area-end -->
 
 <!-- contact-area -->
-<section class="homeContact">
-<div class="container">
-<div class="homeContact__wrap">
-<div class="row">
-<div class="col-lg-6">
-    <div class="section__title">
-        <span class="sub-title">07 - Say hello</span>
-        <h2 class="title">Any questions? Feel free <br> to contact</h2>
-    </div>
-    <div class="homeContact__content">
-        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
-        <h2 class="mail"><a href="mailto:Info@webmail.com">Info@webmail.com</a></h2>
-    </div>
-</div>
-<div class="col-lg-6">
-    <div class="homeContact__form">
-        <form action="#">
-            <input type="text" placeholder="Enter name*">
-            <input type="email" placeholder="Enter mail*">
-            <input type="number" placeholder="Enter number*">
-            <textarea name="message" placeholder="Enter Massage*"></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+@include('frontend.home_all.home_feedback')
             <!-- contact-area-end -->
 
         </main>

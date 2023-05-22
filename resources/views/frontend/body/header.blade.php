@@ -20,11 +20,11 @@
                                     </li>
                                     <li class="menu-item-has-children"><a href=" {{route('home.animal')}} ">Animal Blog</a>
                                     </li>
-                                    <li><a href=" {{route('contact.me')}} ">contact me</a></li>
+                                    <li><a href=" {{route('contact.me')}} ">Contact Us</a></li>
                                 </ul>
                             </div>
                             <div class="header__btn d-none d-md-block">
-                                <a href="contact.html" class="btn">Contact me</a>
+                                <a href="contact.html" class="btn">Contact Us</a>
                             </div>
                         </nav>
                     </div>

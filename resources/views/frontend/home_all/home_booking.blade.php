@@ -14,7 +14,7 @@ $events = App\Models\Event::latest()->get();
                     </div>
                     <div class="homeContact__content">
                         <p>Welcome to Aquarium, your one-stop booking platform for all things aquarium-related</p>
-                        <h2 class="mail"><a href="mailto:Info@webmail.com">Info@webmail.com</a></h2>
+                        <h2 class="mail"><a href="mailto:Info@webmail.com">info@aquarium.com</a></h2>
                     </div>
                 </div>
                 <div class="col-lg-6">
