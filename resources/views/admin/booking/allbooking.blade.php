@@ -50,7 +50,7 @@
                                             <td> {{ $item->phone_number }} </td>
                                             <td> {{ $item->number_of_tickets }} </td>
                                             <td>
-                                                <p>{!! Str::limit($item->description, 35) !!}</p>
+                                                <p>{!! Str::limit($item->description, 30) !!}</p>
                                             </td>
                                             <td>{{ \Carbon\Carbon::parse($item->created_at)->format('j F Y') }}</td>
                                             <td>
