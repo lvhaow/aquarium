@@ -1,6 +1,6 @@
 @php
 $bookings = App\Models\Booking::latest()->get();
-$events = App\Models\Event::latest()->get();
+$events = App\Models\Event::latest()->limit(4)->get();
 @endphp
 
 <section class="homeContact" id="booking">
