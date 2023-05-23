@@ -21,7 +21,7 @@
                 <div class="col">
                     <div class="work__process__item">
                         <span
-                            class="work__process_step">{{ \Carbon\Carbon::parse($item->start_date)->format('F j, Y g:i A') }}</span>
+                            class="work__process_step">{{ \Carbon\Carbon::parse($item->start_date)->format('j-F-Y g:i A') }}</span>
                         <div class="work__process__icon">
                             <img class="light" src="{{ asset($item->event_image) }}" alt="">
                             <img class="dark" src="{{ asset($item->event_image) }}" alt="">

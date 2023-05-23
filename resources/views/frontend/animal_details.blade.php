@@ -1,3 +1,6 @@
+@php
+    $allMultiImage = App\Models\MultiImage::all();
+@endphp
 @extends('frontend.main_master')
 @section('main')
     <main>
@@ -21,12 +24,9 @@
             </div>
             <div class="breadcrumb__wrap__icon">
                 <ul>
-                    <li><img src="assets/img/icons/breadcrumb_icon01.png" alt=""></li>
-                    <li><img src="assets/img/icons/breadcrumb_icon02.png" alt=""></li>
-                    <li><img src="assets/img/icons/breadcrumb_icon03.png" alt=""></li>
-                    <li><img src="assets/img/icons/breadcrumb_icon04.png" alt=""></li>
-                    <li><img src="assets/img/icons/breadcrumb_icon05.png" alt=""></li>
-                    <li><img src="assets/img/icons/breadcrumb_icon06.png" alt=""></li>
+                    @foreach ($allMultiImage as $item)
+                        <li><img src="{{ asset($item->multi_image) }}" alt="" width="120"></li>
+                    @endforeach
                 </ul>
             </div>
         </section>
@@ -54,7 +54,7 @@
                                 <ul class="blog__details__tag">
                                     <li class="title">Tag:</li>
                                     <li class="tags-list">
-                                        <a href="#"> {{ $animals->animal_tags }} </a>
+                                        <a href="{{ route('animal.details', $item->id)}}"> {{ $animals->animal_tags }} </a>
 
                                     </li>
                                 </ul>
@@ -75,11 +75,11 @@
                                             <h4 class="title">Previous Post</h4>
                                             <div class="blog__next__prev__post">
                                                 <div class="blog__next__prev__thumb">
-                                                    <a href="blog-details.html"><img src="assets/img/blog/blog_prev.jpg"
+                                                    <a href="#"><img src="assets/img/blog/blog_prev.jpg"
                                                             alt=""></a>
                                                 </div>
                                                 <div class="blog__next__prev__content">
-                                                    <h5 class="title"><a href="blog-details.html">Digital Marketing Agency
+                                                    <h5 class="title"><a href="#">Digital Marketing Agency
                                                             Pricing Guide.</a></h5>
                                                 </div>
                                             </div>
@@ -90,11 +90,11 @@
                                             <h4 class="title">Next Post</h4>
                                             <div class="blog__next__prev__post">
                                                 <div class="blog__next__prev__thumb">
-                                                    <a href="blog-details.html"><img src="assets/img/blog/blog_next.jpg"
+                                                    <a href="#"><img src="assets/img/blog/blog_next.jpg"
                                                             alt=""></a>
                                                 </div>
                                                 <div class="blog__next__prev__content">
-                                                    <h5 class="title"><a href="blog-details.html">App Prototyping
+                                                    <h5 class="title"><a href="#">App Prototyping
                                                             Types, Example & Usages.</a></h5>
                                                 </div>
                                             </div>
@@ -220,11 +220,12 @@
                                     @foreach ($allanimals as $all)
                                         <li class="rc__post__item">
                                             <div class="rc__post__thumb">
-                                                <a href="blog-details.html"><img src=" {{ asset($all->animal_image) }} "
-                                                        alt=""></a>
+                                                <a href="#"><img
+                                                        src=" {{ asset($all->animal_image) }} " alt=""></a>
                                             </div>
                                             <div class="rc__post__content">
-                                                <h5 class="title"><a href="blog-details.html"> {{ $all->animal_title }}
+                                                <h5 class="title"><a href="#">
+                                                        {{ $all->animal_title }}
                                                     </a></h5>
                                                 <span class="post-date"><i
                                                         class="fal fa-calendar-alt"></i>{{ Carbon\Carbon::parse($all->created_at)->diffForHumans() }}</span>
@@ -249,22 +250,22 @@
                                 <h4 class="widget-title">Recent Comment</h4>
                                 <ul class="sidebar__comment">
                                     <li class="sidebar__comment__item">
-                                        <a href="blog-details.html">Rasalina Sponde</a>
+                                        <a href="#">Rasalina Sponde</a>
                                         <p>There are many variations of passages of lorem ipsum available, but the majority
                                             have</p>
                                     </li>
                                     <li class="sidebar__comment__item">
-                                        <a href="blog-details.html">Rasalina Sponde</a>
+                                        <a href="#">Rasalina Sponde</a>
                                         <p>There are many variations of passages of lorem ipsum available, but the majority
                                             have</p>
                                     </li>
                                     <li class="sidebar__comment__item">
-                                        <a href="blog-details.html">Rasalina Sponde</a>
+                                        <a href="#">Rasalina Sponde</a>
                                         <p>There are many variations of passages of lorem ipsum available, but the majority
                                             have</p>
                                     </li>
                                     <li class="sidebar__comment__item">
-                                        <a href="blog-details.html">Rasalina Sponde</a>
+                                        <a href="#">Rasalina Sponde</a>
                                         <p>There are many variations of passages of lorem ipsum available, but the majority
                                             have</p>
                                     </li>

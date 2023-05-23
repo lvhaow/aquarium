@@ -42,9 +42,9 @@
                         @foreach ( $allanimals as $item)
                             <div class="standard__blog__post">
                                 <div class="standard__blog__thumb">
-                                    <a href="blog-details.html"><img src=" {{ asset($item->animal_image) }} "
+                                    <a href="{{ route('animal.details', $item->id)}}"><img src=" {{ asset($item->animal_image) }} "
                                             alt=""></a>
-                                    <a href="blog-details.html" class="blog__link"><i
+                                    <a href="{{ route('animal.details', $item->id)}}" class="blog__link"><i
                                             class="far fa-long-arrow-right"></i></a>
                                 </div>
                                 <div class="standard__blog__content">
