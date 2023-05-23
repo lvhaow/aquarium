@@ -71,6 +71,12 @@
 
 
             <!-- contact-area -->
+            <br><br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             @include('frontend.home_all.home_feedback')
             <!-- contact-area-end -->
 
